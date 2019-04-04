@@ -1,7 +1,5 @@
-# BAMAZON
-_*MySQL *Bamazon* Store App*_
-
-
+#_*MySQL Bamazon Store App*_
+______________________________________________________________________________________________
 _App Instructions_
 
 ### *Customer Interface*
