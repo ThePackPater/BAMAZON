@@ -31,7 +31,7 @@ The *Ceo Interface can*: `View Product Sales by Department`, analyzing the data 
 | 01            | elf weapons     | 0000            | 00000         | 0000         |
 | 02            | dwarvin steel   | 0000            | 00000         | 0000         |
 
-
+______________________________________________________________________________________________
 
 ### *typical UI - demo videos*
 
