@@ -1,4 +1,6 @@
 #*_MySQL Bamazon Store App_*
+![MoneyZgone Logo](/assets/logo.png)
+Format: ![logo](http://www.fetchlogos.com/wp-content/uploads/2015/11/Funny-Amazon-Logo-600x319.jpg)
 ______________________________________________________________________________________________
 _App Instructions_
 
