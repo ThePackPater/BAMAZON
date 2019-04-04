@@ -33,7 +33,7 @@ The *Ceo Interface can*: `View Product Sales by Department`, analyzing the data 
 
 
 
-
+### *typical UI - demo videos*
 
 
 
