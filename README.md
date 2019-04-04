@@ -1,8 +1,8 @@
 # BAMAZON
-##_MySQL *Bamazon* Store App_
+_*MySQL *Bamazon* Store App*_
 
 
-##_App Instructions_
+_App Instructions_
 
 ### *Customer Interface*
 
