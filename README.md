@@ -1,6 +1,6 @@
 #*_MySQL Bamazon Store App_*
-![](/assets/logo.png)
-Format: ![logo](https://i.pinimg.com/originals/5f/fe/2e/5ffe2e4f39d5754040cb2a81aa20e55a.jpg) 
+![](/assets/logo.jpg)
+![logo](https://i.pinimg.com/originals/5f/fe/2e/5ffe2e4f39d5754040cb2a81aa20e55a.jpg) 
 ______________________________________________________________________________________________
 _App Instructions_
 
