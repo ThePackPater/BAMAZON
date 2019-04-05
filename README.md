@@ -5,7 +5,7 @@ ________________________________________________________________________________
 _App Instructions_
 
 ### *Customer Interface*
-The *Customer Interface* can: see available products prices and inventory.
+The *Customer Interface*: see available products prices inventory and order products recorded by adjusting inv and sales.
 
 | department_id | department_name |product     | product_inventory | product_price | 
 | ------------- | --------------- |------------| ----------------- | ------------- | 
@@ -15,7 +15,7 @@ The *Customer Interface* can: see available products prices and inventory.
 
 ### *Manager Interface*
 
-The *Manager Interface* can: watch/adjust realtime product_sales inventory add new products and analize ordering needs.
+The *Manager Interface*: watch realtime product_sales (Product_Sold (*) Product_Price) inventory and add new products as needed.
 
 | department_id | department_name |product     | product_inventory | product_sales | 
 | ------------- | --------------- |------------| ----------------- | ------------- | 
@@ -24,7 +24,7 @@ The *Manager Interface* can: watch/adjust realtime product_sales inventory add n
 
 ### *CEO Interface*
 
-The *Ceo Interface can*: `View Product Sales by Department`, analyzing the data and displaying a summarized table in the terminal/bash window. 
+The *Ceo Interface*: View Product Sales by Department and display a summary table with total Product_Sales (-) Total_OverHead_Cost = Total Profit. 
 
 | department_id | department_name | over_head_costs | product_sales | total_profit |
 | ------------- | --------------- | --------------- | ------------- | ------------ |
