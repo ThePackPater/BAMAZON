@@ -66,6 +66,7 @@ function allowCust() {
                 if (answer.purchase === "dwarven weapons") {
                     console.log(divider);
                     console.log("Heaft and Damage, excellent choice if you got the gold...");
+                    console.log(divider)
                     inquirer
                         .prompt({
                             name: "dwarven",
@@ -73,10 +74,9 @@ function allowCust() {
                             choices: ["broadsword", "battleaxe", "warhammer"],
                             message: "What weapon would you like to purchase?"
                         })
-                        .then(function(answer) {
-                            console.log(divider);
-
-                            switch (answer) {
+                        .then(function(inquirerResp) {
+                            var user = inquirerResp.dwarven;
+                            switch (user) {
                                 case "broadsword":
                                     console.log("Wanna cut a wide swath from your enemy ranks do ya?!");
                                     console.log(divider);
@@ -92,19 +92,18 @@ function allowCust() {
                             }
                         });
                 } else if (answer.purchase === "elven weapons") {
-                    console.log(divider);
                     console.log("Speed and Magic, excellent choice if you got the gold...");
+                    console.log(divider)
                     inquirer
                         .prompt({
-                            name: "dwarven",
+                            name: "elven",
                             type: "list",
                             choices: ["longbow", "shortsword", "dagger"],
                             message: "What weapon would you like to purchase?"
                         })
-                        .then(function(answer) {
-                            console.log(divider);
-
-                            switch (answer) {
+                        .then(function(inquirerResp) {
+                            var user = inquirerResp.elven;
+                            switch (user) {
                                 case "longbow":
                                     console.log("Want to get some distance between yourself and a murderous ORC?!");
                                     console.log(divider);
