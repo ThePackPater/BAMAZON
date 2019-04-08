@@ -22,7 +22,7 @@ INSERT INTO Bamazon (Department_Name, Product, Product_Inventory, Product_Price,
 VALUES ("Elvin Weapons", "Dagger", 100, 125, 0, 100, 0);
 
 INSERT INTO Bamazon (Department_Name, Product, Product_Inventory, Product_Price, Product_Sales, Overhead_Cost, Total_Profit)
-VALUES ("Dwarvin Weapons", "BroadSword", 100, 750, 0, 600, 0);
+VALUES ("Dwarvin Weapons", "BroadSword", 100, 650, 0, 500, 0);
 INSERT INTO Bamazon (Department_Name, Product, Product_Inventory, Product_Price, Product_Sales, Overhead_Cost, Total_Profit)
 VALUES ("Dwarvin Weapons", "BattleAxe", 100, 450, 0, 360, 0);
 INSERT INTO Bamazon (Department_Name, Product, Product_Inventory, Product_Price, Product_Sales, Overhead_Cost, Total_Profit)

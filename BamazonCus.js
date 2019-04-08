@@ -1,5 +1,6 @@
 var inquirer = require("inquirer");
 var mysql = require("mysql");
+var chalk = require('chalk');
 var divider = "\n------------------------------------------------------------\n";
 
 var connection = mysql.createConnection({
@@ -20,28 +21,22 @@ function bamazonStart() {
     inquirer
         .prompt([{
             type: "list",
-            message: "Welcome to Bamazon:MoneyZgone: What access do you require?",
-            choices: ["CustomerAccess", "ManagerAccess", "CEOAccess"],
+            message: chalk.red("Welcome to Bamazon: MoneyZgone: Inhumnan Weapons Division: What access do you require?"),
+            choices: ["CustomerAccess", "ManagerAccess"],
             name: "userRole",
         }]).then(function(inquirerResp) {
             var User = inquirerResp.userRole;
-            console.log("\nVerifying Bamazon access: " + User);
-            console.log("One moment please!\n");
+            console.log(chalk.blue("\nVerifying Bamazon access: " + User) + chalk.blue("\nOne moment please!\n"));
             switch (User) {
                 case "CustomerAccess":
-                    console.log("Customer Access Granted!");
+                    console.log(chalk.green("Customer Access Granted!"));
                     console.log(divider);
                     allowCust();
                     break;
                 case "ManagerAccess":
-                    console.log("Manager Access Granted!");
+                    console.log(chalk.green("Manager Access Granted!"));
                     connection.end();
                     //allowMgr();
-                    break;
-                case "CEOAccess":
-                    console.log("CEO Access Granted!");
-                    connection.end();
-                    //allowCEO();
                     break;
                 default:
                     console.log("I'm sorry you cannot access Bamazon");
@@ -59,14 +54,14 @@ function allowCust() {
             .prompt({
                 name: "purchase",
                 type: "list",
-                choices: ["dwarven weapons", "elven weapons"],
-                message: "What type of weapons would you like to purchase?"
+                choices: ["Purchase dwarven weapons", "Purchase elven weapons", "I'm finished"],
+                message: "What can we do for you?"
             })
             .then(function(answer) {
-                if (answer.purchase === "dwarven weapons") {
+                if (answer.purchase === "Purchase dwarven weapons") {
                     console.log(divider);
-                    console.log("Heaft and Damage, excellent choice if you got the gold...");
-                    console.log(divider)
+                    console.log("Heft and Damage, excellent choice if you got the gold...");
+                    console.log(divider);
                     inquirer
                         .prompt({
                             name: "dwarven",
@@ -79,21 +74,28 @@ function allowCust() {
                             switch (user) {
                                 case "broadsword":
                                     console.log("Wanna cut a wide swath from your enemy ranks do ya?!");
+                                    console.log("\nOur Dwarven Broadswords are 650 gold pieces, I'll add one to your your cart and send a Goblin to collect the gold. Thank You!");
                                     console.log(divider);
+                                    allowCust();
                                     break;
                                 case "battleaxe":
                                     console.log("Looking to cleave a skull or two?!");
+                                    console.log("\nOur Dwarven Battleaxes are 450 gold pieces, I'll add one to your your cart and send a Goblin to collect the gold. Thank You!");
                                     console.log(divider);
+                                    allowCust();
                                     break;
                                 case "warhammer":
                                     console.log("Oh I like your style, feel like smashing your foes?");
+                                    console.log("\nOur Dwarven Warhammers are 475 gold pieces, I'll add one to your your cart and send a Goblin to collect the gold. Thank You!");
                                     console.log(divider);
+                                    allowCust();
                                     break;
+
                             }
                         });
-                } else if (answer.purchase === "elven weapons") {
+                } else if (answer.purchase === "Purchase elven weapons") {
                     console.log("Speed and Magic, excellent choice if you got the gold...");
-                    console.log(divider)
+                    console.log(divider);
                     inquirer
                         .prompt({
                             name: "elven",
@@ -106,24 +108,31 @@ function allowCust() {
                             switch (user) {
                                 case "longbow":
                                     console.log("Want to get some distance between yourself and a murderous ORC?!");
+                                    console.log("\nOur Elven Longbows are 575 gold pieces, I'll add one to your your cart and send a Goblin to collect the gold. Thank You!");
                                     console.log(divider);
+                                    allowCust();
                                     break;
                                 case "shortsword":
                                     console.log("Do you need to get up close and personal?!");
+                                    console.log("\nOur Elven Shortswords are 300 gold pieces, I'll add one to your your cart and send a Goblin to collect the gold. Thank You!");
                                     console.log(divider);
+                                    allowCust();
                                     break;
                                 case "dagger":
                                     console.log("Needing to kill someone before they know you're there?!");
+                                    console.log("\nOur Elven daggers are 100 gold pieces, I'll add one to your your cart and send a Goblin to collect the gold. Thank You!");
                                     console.log(divider);
+                                    allowCust();
                                     break;
                             }
                         });
-                } else {
+                } else if (answer.purchase === "I'm finished") {
+                    console.log("Good Questing Traveller come see me when you've got the gold!");
                     console.log(divider);
                     connection.end();
                 }
             });
-        connection.end();
+        //connection.end();
     });
 
 }
