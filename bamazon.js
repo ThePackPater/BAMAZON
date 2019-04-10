@@ -21,25 +21,25 @@ function bamazonStart() {
     inquirer
         .prompt([{
             type: "list",
-            message: chalk.red("Welcome to Bamazon: MoneyZgone: Inhumnan Weapons Division: What access do you require?"),
+            message: chalk.red.bgGreen.bold("Welcome to Bamazon: MoneyZgone: Inhumnan Weapons Division: What access do you require?"),
             choices: ["CustomerAccess", "ManagerAccess"],
             name: "userRole",
         }]).then(function(inquirerResp) {
             var User = inquirerResp.userRole;
-            console.log(chalk.blue("\nVerifying Bamazon access: " + User) + chalk.blue("\nOne moment please!\n"));
+            console.log(chalk.bgRed("\nVerifying Bamazon access: " + User) + chalk.bgRed("\nOne moment please!\n"));
             switch (User) {
                 case "CustomerAccess":
-                    console.log(chalk.green("Customer Access Granted!"));
+                    console.log(chalk.bgGreen("Customer Access Granted!"));
                     console.log(divider);
                     allowCust();
                     break;
                 case "ManagerAccess":
-                    console.log(chalk.green("Manager Access Granted!"));
+                    console.log(chalk.bgGreen("Manager Access Granted!"));
                     connection.end();
                     //allowMgr();
                     break;
                 default:
-                    console.log("I'm sorry you cannot access Bamazon");
+                    console.log(chalk.bgRed("I'm sorry you cannot access Bamazon"));
                     connection.end();
                     //tryAgain();
                     break;
@@ -55,12 +55,12 @@ function allowCust() {
                 name: "purchase",
                 type: "list",
                 choices: ["Purchase dwarven weapons", "Purchase elven weapons", "I'm finished"],
-                message: "What can we do for you?"
+                message: chalk.bgGreen("What can we do for you?")
             })
             .then(function(answer) {
                 if (answer.purchase === "Purchase dwarven weapons") {
                     console.log(divider);
-                    console.log("Heft and Damage, excellent choice if you got the gold...");
+                    console.log(chalk.bgRed("Heft and Damage, excellent choice if you got the gold..."));
                     console.log(divider);
                     inquirer
                         .prompt({
@@ -93,6 +93,7 @@ function allowCust() {
 
                             }
                         });
+
                 } else if (answer.purchase === "Purchase elven weapons") {
                     console.log("Speed and Magic, excellent choice if you got the gold...");
                     console.log(divider);
@@ -132,7 +133,6 @@ function allowCust() {
                     connection.end();
                 }
             });
-        //connection.end();
     });
 
 }
