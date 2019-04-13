@@ -15,23 +15,13 @@ The *Customer Interface*: see available products prices inventory and order prod
 
 ### *Manager Interface*
 
-The *Manager Interface*: watch realtime product_sales (Product_Sold (*) Product_Price) inventory and add new products as needed.
+The *Manager Interface*: watch realtime product_sales (Product_Sold (*) Product_Price) inventory as needed.
 
 | department_id | department_name |product     | product_inventory | product_sales | 
 | ------------- | --------------- |------------| ----------------- | ------------- | 
 | 01            | elvin weapons   | BroadSword | 00000             | 00000         | 
 | 02            | dwarvin weapons | BattleAxe  | 00000             | 00000         | 
 
-### *CEO Interface*
-
-The *Ceo Interface*: View Product Sales by Department and display a summary table with total Product_Sales (-) Total_OverHead_Cost = Total Profit. 
-
-| department_id | department_name | over_head_costs | product_sales | total_profit |
-| ------------- | --------------- | --------------- | ------------- | ------------ |
-| 01            | elf weapons     | 0000            | 00000         | 0000         |
-| 02            | dwarvin steel   | 0000            | 00000         | 0000         |
-
-______________________________________________________________________________________________
 
 ### *typical UI - demo videos*
 
