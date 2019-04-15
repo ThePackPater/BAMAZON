@@ -42,8 +42,7 @@ function bamazonStart() {
                     allowMgr();
                     break;
                 case "Exit":
-                    break;
-                    // connection.end();
+                    connection.end();
 
             }
         });
@@ -77,7 +76,7 @@ function allowCust() {
 
                                 connection.query(
                                     "UPDATE bamazon SET ? WHERE ?", [{
-                                        Product_Inventory: -1,
+                                        Product_Inventory: 09,
                                         Product_Sales: +1
                                     }, {
                                         Product: "BroadSword"
@@ -93,7 +92,7 @@ function allowCust() {
                                 console.log(chalk.cyan("Looking to cleave a skull or two?!"));
                                 connection.query(
                                     "UPDATE bamazon SET ? WHERE ?", [{
-                                        Product_Inventory: -1,
+                                        Product_Inventory: 09,
                                         Product_Sales: +1
                                     }, {
                                         Product: "BattleAxe"
@@ -109,7 +108,7 @@ function allowCust() {
                                 console.log(chalk.cyan("Oh I like your style, feel like smashing your foes?"));
                                 connection.query(
                                     "UPDATE bamazon SET ? WHERE ?", [{
-                                        Product_Inventory: -1,
+                                        Product_Inventory: 09,
                                         Product_Sales: +1
                                     }, {
                                         Product: "WarHammer"
@@ -144,7 +143,7 @@ function allowCust() {
                                 console.log(chalk.cyan("Want to get some distance between yourself and a murderous ORC?!"));
                                 connection.query(
                                     "UPDATE bamazon SET ? WHERE ?", [{
-                                        Product_Inventory: -1,
+                                        Product_Inventory: 09,
                                         Product_Sales: +1
                                     }, {
                                         Product: "LongBow"
@@ -160,7 +159,7 @@ function allowCust() {
                                 console.log(chalk.cyan("Do you need to get up close and personal?!"));
                                 connection.query(
                                     "UPDATE bamazon SET ? WHERE ?", [{
-                                        Product_Inventory: -1,
+                                        Product_Inventory: 09,
                                         Product_Sales: +1
                                     }, {
                                         Product: "ShortSword"
@@ -176,7 +175,7 @@ function allowCust() {
                                 console.log(chalk.cyan("Needing to kill someone before they know you're there?!"));
                                 connection.query(
                                     "UPDATE bamazon SET ? WHERE ?", [{
-                                        Product_Inventory: -1,
+                                        Product_Inventory: 09,
                                         Product_Sales: +1
                                     }, {
                                         Product: "Dagger"
@@ -207,7 +206,7 @@ function allowMgr() {
         .prompt({
             name: "audit",
             type: "list",
-            choices: ["Check Inventory", "Add items", "Delete Items", "Update Items", "I'm Finished"],
+            choices: ["Check Inventory", "I'm Finished"],
             message: chalk.magenta.bold("How may we serve you Master?")
         })
         .then(function(answer) {
@@ -219,24 +218,18 @@ function allowMgr() {
                     readProduct();
                     //allowMgr();
                     break;
-                case "Update Items":
-                    console.log(chalk.cyan("\nYes Master! Change them, change them and make them obey!!"));
-                    console.log(divider);
-                    updateProduct();
-                    //allowMgr();
-                    break;
-                case "Add items":
-                    console.log(chalk.cyan("\nYes Master! More inhuman death devices!!"));
-                    console.log(divider);
-                    createProduct();
-                    //allowMgr();
-                    break;
-                case "Delete Items":
-                    console.log(chalk.cyan("\nRemove the shameful failures Master, SPITE THEM!!"));
-                    console.log(divider);
-                    removeProduct();
-                    //allowMgr();
-                    break;
+                    // case "Add items":
+                    //     console.log(chalk.cyan("\nYes Master! More inhuman death devices!!"));
+                    //     console.log(divider);
+                    //     addProduct();
+                    //     //allowMgr();
+                    //     break;
+                    // case "Delete Items":
+                    //     console.log(chalk.cyan("\nRemove the shameful failures Master, SPITE THEM!!"));
+                    //     console.log(divider);
+                    //     removeProduct();
+                    //     //allowMgr();
+                    //  break;
                 case "I'm Finished":
                     console.log(chalk.cyan("\nThank you Master, Dark Blessings upon you!"));
                     console.log(divider);
@@ -268,18 +261,33 @@ function readProduct() {
 
 }
 
-function updateProduct() {
-    connection.query(
-        "UPDATE bamazon SET ? WHERE ?", [{
+// function addProduct() {
+//     console.log("Inserting a new product...\n");
+//     var query = connection.query(
+//         "INSERT INTO products SET ?", {
+//             Department_Name: "elven weapons",
+//             Product: "new product",
+//             Product_Inventory: 10,
+//             Product_Price: 800,
+//             Product_Sales: 0
+//         },
+//         function(err, res) {
+//             console.log(res.affectedRows + " product inserted!\n");
 
-            },
-            {
+//         }
+//     );
 
-            }
-        ],
-        function(err, res) {
-            console.log(res.affectedRows + " products updated!\n");
-        }
-    );
-    allowMgr();
-}
+// }
+
+// function removeProduct() {
+//     console.log("Deleting all New Product...\n");
+//     connection.query(
+//         "DELETE FROM products WHERE ?", {
+//             Product: "new product",
+//         },
+//         function(err, res) {
+//             console.log(res.affectedRows + " products deleted!\n");
+
+//         }
+//     );
+// }
