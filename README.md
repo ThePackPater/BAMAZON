@@ -26,4 +26,4 @@ The *Manager Interface*: watch realtime product_sales (Product_Sold (*) Product_
 ### *typical UI - demo videos*
 
 
-
+https://drive.google.com/file/d/14P9Xg8iYYGtmoOv8NM9vwpQm4gBvZla9/view
